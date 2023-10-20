@@ -1,8 +1,6 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-// const secretKey = 'thisisthesecritekeyofadminloginfromdeshbopard';
-
 const secretKey = process.env.SECRET_KEY;
 
 const isLoggedIn = async (req, res, next) => {

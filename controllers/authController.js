@@ -1,7 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { StaffData } = require('../models/staffSchema');
-
 require('dotenv').config();
 
 const secretKey = process.env.SECRET_KEY;
@@ -32,6 +31,7 @@ const handleLogin = async (req, res, next) => {
     res.status(200).json({
       success: true,
       message: 'Login successful',
+      // payload: accessToken,
       accessToken: accessToken,
     });
   } catch (error) {

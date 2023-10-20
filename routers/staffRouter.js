@@ -6,6 +6,7 @@ const {
   updateStaff,
 } = require('../controllers/staffController');
 const upload = require('../middleware/uploadFile');
+const { isLoggedIn } = require('../middleware/auth');
 const staffRouter = express.Router();
 
 staffRouter.post('/create_staff', upload.single('image'), createStaff);
