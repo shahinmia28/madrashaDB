@@ -7,10 +7,13 @@ const staffRouter = require('./routers/staffRouter');
 const noticeRouter = require('./routers/noticeRouter');
 const resultRouter = require('./routers/resultRouter');
 const authRouter = require('./routers/authRouter');
-
 const path = require('path');
-
 const cors = require('cors');
+
+const connectDB = require("./config/db");
+require("dotenv").config({ path: "./config.env" });
+
+const PORT = process.env.PORT || 3001;
 
 var corsOptions = {
   origin: '*',
@@ -42,4 +45,8 @@ app.use('/', noticeRouter);
 app.use('/', resultRouter);
 app.use('/', authRouter);
 
-module.exports = app;
+app.listen(PORT, async () => {
+  console.log(`server is running`);
+  await connectDB();
+});
+
