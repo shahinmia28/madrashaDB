@@ -2,9 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { StaffData } = require('../models/staffSchema');
 
-require('dotenv').config();
-
-// const secretKey = 'thisisthesecritekeyofadminloginfromdeshbopard';
+require("dotenv").config({ path: "./config.env" });
 
 const secretKey = process.env.SECRET_KEY;
 
