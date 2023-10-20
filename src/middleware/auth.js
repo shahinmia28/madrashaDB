@@ -1,7 +1,5 @@
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
-
-// const secretKey = 'thisisthesecritekeyofadminloginfromdeshbopard';
+require("dotenv").config({ path: "./config.env" });
 
 const secretKey = process.env.SECRET_KEY;
 
