@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+require("dotenv").config({ path: "./config.env" });
 const mongoDBURL = process.env.MONGODB_ATLAS_URL;
 
 const connectDB = async () => {
