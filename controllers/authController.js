@@ -4,8 +4,6 @@ const { StaffData } = require('../models/staffSchema');
 
 require('dotenv').config();
 
-// const secretKey = 'thisisthesecritekeyofadminloginfromdeshbopard';
-
 const secretKey = process.env.SECRET_KEY;
 
 const handleLogin = async (req, res, next) => {
