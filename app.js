@@ -26,15 +26,15 @@ app.use(cookieParser());
 app.use('/public', express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static(path.join(__dirname, "./build")));
+// app.use(express.static(path.join(__dirname, "./build")));
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./build/index.html"));
-});
-
-// app.get('/', (req, res) => {
-//   res.status(200).json('Welcome to MERN Stack server for Madrasha Project');
+// app.get("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./build/index.html"));
 // });
+
+app.get('/', (req, res) => {
+  res.status(200).json('Welcome to MERN Stack server for Madrasha Project');
+});
 
 app.use('/', studentRouter);
 app.use('/', staffRouter);
